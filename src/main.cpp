@@ -306,8 +306,8 @@ int main(int argc, char **argv)
         cout << "Loaded "<<FaceCnt<<" faces in total"<<endl;
     }
 
-    // RaspiCam or Norton_2.mp4 ?
-    // cv::VideoCapture cap(0);             //RaspiCam
+    // WebCam or Norton_M.mp4 ?
+    // cv::VideoCapture cap(0);             //WebCam
     cv::VideoCapture cap("Norton_M.mp4");   //Movie
     if (!cap.isOpened()) {
         cerr << "ERROR: Unable to open the camera" << endl;
