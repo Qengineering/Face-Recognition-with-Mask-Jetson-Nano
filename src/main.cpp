@@ -357,9 +357,9 @@ int main(int argc, char **argv)
 #ifdef TEST_MASK
                 //test to see if the face is wearing a mask
                 auto* input_data = input_tensor1->mutable_data<float>();
-                //enlarge 10%
-                float w = Faces[i].rect.width/20.0;
-                float h = Faces[i].rect.height/20.0;
+                //enlarge 12.5%
+                float w = Faces[i].rect.width/25.0;
+                float h = Faces[i].rect.height/25.0;
                 cv::Point pt1(std::max(x1-w,float(0.0)),std::max(y1-h,float(0.0)));
                 cv::Point pt2(std::min(x2+w,float(frame.cols)),std::min(y2+h,float(frame.rows)));
                 //RecClip is completly inside the frame
@@ -369,7 +369,7 @@ int main(int argc, char **argv)
 
                 if(RecClip.width>0 && RecClip.height>0){
                     //roi has size RecClip
-                    cv::Mat roi = frame(RecClip);
+                    cv::Mat roi = result_cnn(RecClip);
 
                     //resized_img has size 128x128 (uchar)
                     cv::resize(roi, resized_img, cv::Size(classify_w, classify_h), 0.f, 0.f, cv::INTER_CUBIC);
