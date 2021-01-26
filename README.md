@@ -25,7 +25,7 @@ Special made for a Jetson Nano see [Q-engineering deep learning examples](https:
 | MTCNN  | 11 mS | 14 mS  | 22 mS | 25 mS  |
 | RetinaFace  | 15 mS  | 19 mS  | 35 mS  | 37 mS  |
 | ArcFace  | +17 mS | +21 mS  | +36 mS  | +40 mS  |
-| Mask  | +8 mS | +10 mS  | ? mS  | ? mS  |
+| Mask  | +8 mS | +10 mS  | +10 mS  | +12 mS  |
 | Spoofing | +25 mS  | +37 mS  | +37 mS  | +45 mS  |
 
 
@@ -85,6 +85,11 @@ By the way, note the warp perspective of Graham Norton's face that we added via 
 The **blur filter** prevents vague or imprecise faces from being added to the database. Below you see a few examples of faces we encounter in the database when de blur filter was switched off.<br/><br/>
 ![output image]( https://qengineering.eu/images/Strangers4.jpg )<br/><br/>
 Another safety measure is the orientation of the face. Only faces in front of the camera are added to the database. Faces "in profile" are often inaccurate in large databases.<br/>
+
+------------
+
+## Mask detection.
+We use Paddle-Lite mask detection for face mask detection. We have previously applied this network in the [Face-Mask-Detection-Jetson-Nano](https://github.com/Qengineering/Face-Mask-Detection-Jetson-Nano) app. It's lightweight and fast. However, you will need to install Paddle-Lite on your Jetson Nano as an additional framework in addition to ncnn. Please note that PaddlePaddle has only trained its face mask detection network with white (or light-coloured) masks. Nowadays you see a lot of black masks or masks with fancy prints. Unfortunately, they are not recognized by this network
 
 ------------
 
