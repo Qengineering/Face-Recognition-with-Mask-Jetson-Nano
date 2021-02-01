@@ -361,7 +361,7 @@ int main(int argc, char **argv)
                 float w = Faces[i].rect.width/25.0;
                 float h = Faces[i].rect.height/25.0;
                 cv::Point pt1(std::max(x1-w,float(0.0)),std::max(y1-h,float(0.0)));
-                cv::Point pt2(std::min(x2+w,float(frame.cols)),std::min(y2+h,float(frame.rows)));
+                cv::Point pt2(std::min(x2+w,float(result_cnn.cols)),std::min(y2+h,float(result_cnn.rows)));
                 //RecClip is completly inside the frame
                 cv::Rect  RecClip(pt1, pt2);
                 cv::Mat   resized_img;
