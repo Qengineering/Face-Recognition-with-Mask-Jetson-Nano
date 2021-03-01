@@ -269,7 +269,7 @@ int main(int argc, char **argv)
 
                 cv::String Str = imagepath;
                 n   = Str.rfind('/');
-                Str = Str.erase(0,n+1);
+                if(n>=0) Str = Str.erase(0,n+1);
                 Str = Str.erase(Str.length()-4, Str.length()-1);  //remove .jpg
 
 
@@ -296,7 +296,7 @@ int main(int argc, char **argv)
             //get a proper name
             cv::String &Str = NameFaces[i];
             n   = Str.rfind('/');
-            Str = Str.erase(0,n+1);
+            if(n>=0) Str = Str.erase(0,n+1);
             n   = Str.find('#');
             if(n>0) Str = Str.erase(n,Str.length()-1);                //remove # some numbers.jpg
             else    Str = Str.erase(Str.length()-4, Str.length()-1);  //remove .jpg
