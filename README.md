@@ -32,6 +32,7 @@ Special made for a Jetson Nano see [Q-engineering deep learning examples](https:
 ------------
 
 ## Dependencies.
+### April 4 2021: Adapted for ncnn version 20210322
 To run the application, you have to:
 - The Paddle Lite framework installed. [Install Paddle](https://qengineering.eu/install-paddle-on-jetson-nano.html) <br/>
 - The Tencent ncnn framework installed. [Install ncnn](https://qengineering.eu/install-ncnn-on-jetson-nano.html) <br/>
